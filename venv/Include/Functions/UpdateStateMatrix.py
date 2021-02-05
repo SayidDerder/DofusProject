@@ -4,7 +4,7 @@ import numpy as np
 
 def update_state_matrix(old_matrix, grid, player):
     """
-
+    Updates the state matrix after a given player has played
     :param old_matrix: Previous State matrix
     :param grid: Matrix containing coordinates of the world
     :param player: Boolean variable, true if player turn, false otherwise
