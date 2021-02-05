@@ -17,7 +17,7 @@ def LoadMap(MapName: str):
         # First line is name
         if i == 0:
            name = line
-        
+
         # Other lines are positions
         else:
             # Split the values

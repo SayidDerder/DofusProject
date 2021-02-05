@@ -2,11 +2,13 @@ from PIL import Image, ImageGrab
 import time
 import numpy as np
 from Functions.Combat import Combat
+from Functions.CombatCra import CombatCra
 
-def VerifyCombat(mouse):
+def VerifyCombat(mouse, map):
     
     # Coordinate of cell to check if in combat
-    check_pos = (1461, 764)
+    check_pos = map.check_pos
+    print(check_pos)
 
     time.sleep(1)
     # Get screenshot
@@ -18,7 +20,8 @@ def VerifyCombat(mouse):
 
     # Check if in combat by checking red array of image
     # Case not in combat
-    if screen[check_pos[1], check_pos[0], 0] < 200:
+    print(screen[int(check_pos[1]),int(check_pos[0]),0])
+    if screen[int(check_pos[1]),int(check_pos[0]),0] < 200:
         return False
 
     # Case in combat

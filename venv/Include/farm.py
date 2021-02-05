@@ -4,8 +4,10 @@ from pynput.mouse import Button
 from pynput.keyboard import Key
 import time
 import numpy as np
-from Functions.VerifyCombat import VerifyCombat
-from Functions.Combat import Combat
+
+from Functions.CheckIfInCombat import check_if_in_combat
+from Functions.AutoBattle import AutoBattle
+
 from Utilities.LoadMap import LoadMap
 from Map import Map
 
@@ -15,19 +17,19 @@ keyboard = kb.Controller()
 if __name__ == "__main__":
 
     #Create a map object with parameters from file
-    map = LoadMap("ForetAbraknyde")
+    map = LoadMap("PiscineSufokia2")
     
     time.sleep(2)
-    i = 15
+    i = 0
 
     while (True):
-
-        # Verify if in combat
-        if VerifyCombat(mouse):
-            Combat(mouse)
             
         # Loop for i going from 0 to 24
-        i = i % 25
+        i = i % len(map.ressource_positions)
+
+        # Check for combat
+        if check_if_in_combat():
+            AutoBattle()
         
         # get mouse position
         pos = mouse.position
@@ -42,7 +44,7 @@ if __name__ == "__main__":
         mouse.position = pos
         
         # Wait until end of collect
-        time.sleep(1)
+        time.sleep(3)
         
         # increment counter
         i = i + 1
