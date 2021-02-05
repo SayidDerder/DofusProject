@@ -1,7 +1,7 @@
 # DofusProject
 
-- Aller sur la map secrete de la foret des abraknydes.
-- mettre en mode créature
-- avoir un sort de zone lancable sur sois en position ligne 1 colonne 8
+- Aller a l'une des piscines de sufokia.
+- mettre en mode créature, en combat aussi
+- Avoir un sort qui met des dégat a min 1 po en ligne 1 colonne 2
 - run script farm.py
 - enjoy
